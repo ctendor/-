@@ -71,7 +71,3 @@ function logout() {
   alert("로그아웃 되었습니다.");
   window.location.href = "../login/index.html";
 }
-
-function mergeTeamSchedules() {
-  alert("팀원의 일정이 팀장 일정에 합쳐졌습니다.");
-}
