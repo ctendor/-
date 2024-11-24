@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.container {
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header div {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.calendar-container {
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.calendar-table th,
+.calendar-table td {
+  width: 14.28%;
+  height: 60px;
+  text-align: center;
+  border: 1px solid black;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.calendar-table th {
+  font-weight: bold;
+}
+
+.form-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: white;
+}
+
+.form-container input {
+  width: calc(100% - 20px);
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.team-merge {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.team-merge button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.team-merge button:hover {
+  background-color: #0056b3;
+}
+
+.logout-btn {
+  color: #dc3545;
+  font-size: 14px;
+  cursor: pointer;
+}
