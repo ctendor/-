@@ -1,3 +1,6 @@
+var currentYear;
+var currentMonth;
+
 function calculateDayOfWeek(year, month, day) {
   const baseYear = 2000;
   const baseMonth = 1;
@@ -48,13 +51,24 @@ function highlightSelectedMonth() {
     }
   });
 }
+function setCurrentDate() {
+  const today = new Date();
+  currentYear = today.getFullYear();
+  currentMonth = today.getMonth() + 1;
+}
 
-let currentYear = 2024;
-let currentMonth = 12;
+function initializeMonthPagination() {
+  const monthElements = document.querySelectorAll(".month-pagination .month");
+  monthElements.forEach((element, index) => {
+    element.addEventListener("click", () => selectMonth(index + 1));
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  setCurrentDate();
   renderCalendar(currentYear, currentMonth);
   highlightSelectedMonth();
+  initializeMonthPagination();
 });
 
 function prevYear() {

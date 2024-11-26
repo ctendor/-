@@ -48,6 +48,10 @@ body {
   cursor: pointer;
 }
 
+.month-pagination span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .calendar-table {
   width: 100%;
   border-collapse: collapse;

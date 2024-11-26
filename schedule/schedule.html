@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div>접속자: stageus | 부서: 경영 | 직급: 팀장</div>
+        <div>접속자: 이태경 | 직급 : 관리자</div>
         <div class="logout-btn" onclick="logout()">로그아웃</div>
       </div>
 
@@ -21,29 +21,29 @@
           <button onclick="nextYear()">&#9654;</button>
         </div>
         <div class="month-pagination">
-          <span onclick="selectMonth(1)" class="month">1</span>
-          <span onclick="selectMonth(2)" class="month">2</span>
-          <span onclick="selectMonth(3)" class="month">3</span>
-          <span onclick="selectMonth(4)" class="month">4</span>
-          <span onclick="selectMonth(5)" class="month">5</span>
-          <span onclick="selectMonth(6)" class="month">6</span>
-          <span onclick="selectMonth(7)" class="month">7</span>
-          <span onclick="selectMonth(8)" class="month">8</span>
-          <span onclick="selectMonth(9)" class="month">9</span>
-          <span onclick="selectMonth(10)" class="month">10</span>
-          <span onclick="selectMonth(11)" class="month">11</span>
-          <span onclick="selectMonth(12)" class="month">12</span>
+          <span class="month">1</span>
+          <span class="month">2</span>
+          <span class="month">3</span>
+          <span class="month">4</span>
+          <span class="month">5</span>
+          <span class="month">6</span>
+          <span class="month">7</span>
+          <span class="month">8</span>
+          <span class="month">9</span>
+          <span class="month">10</span>
+          <span class="month">11</span>
+          <span class="month">12</span>
         </div>
         <table class="calendar-table">
           <thead>
             <tr>
+              <th>Sun</th>
               <th>Mon</th>
               <th>Tue</th>
               <th>Wed</th>
               <th>Thu</th>
               <th>Fri</th>
               <th>Sat</th>
-              <th>Sun</th>
             </tr>
           </thead>
           <tbody id="calendar-body"></tbody>
@@ -54,6 +54,6 @@
         <button onclick="mergeTeamSchedules()">팀원 일정 합치기</button>
       </div>
     </div>
-    <script type="module" src="schedule.js"></script>
+    <script src="schedule.js"></script>
   </body>
 </html>
