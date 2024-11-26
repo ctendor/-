@@ -19,8 +19,10 @@ form {
   background-color: var(--color-blue);
   border-radius: var(--size-border);
   padding: 30px 20px;
-  width: 300px;
+  width: 600px;
+  align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 50%;
 }
 
 .input-container {
@@ -32,6 +34,7 @@ form {
   font-size: 14px;
   color: white;
   margin-bottom: 5px;
+  margin-top: 10px;
   text-align: left;
 }
 

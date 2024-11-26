@@ -16,10 +16,23 @@
 
       <div class="calendar-container">
         <div class="calendar-header">
-          <button onclick="prevMonth()">&#9664;</button>
+          <button onclick="prevYear()">&#9664;</button>
           <span id="calendar-year">2024</span>년
-          <span id="calendar-month">12</span>월
-          <button onclick="nextMonth()">&#9654;</button>
+          <button onclick="nextYear()">&#9654;</button>
+        </div>
+        <div class="month-pagination">
+          <span onclick="selectMonth(1)" class="month">1</span>
+          <span onclick="selectMonth(2)" class="month">2</span>
+          <span onclick="selectMonth(3)" class="month">3</span>
+          <span onclick="selectMonth(4)" class="month">4</span>
+          <span onclick="selectMonth(5)" class="month">5</span>
+          <span onclick="selectMonth(6)" class="month">6</span>
+          <span onclick="selectMonth(7)" class="month">7</span>
+          <span onclick="selectMonth(8)" class="month">8</span>
+          <span onclick="selectMonth(9)" class="month">9</span>
+          <span onclick="selectMonth(10)" class="month">10</span>
+          <span onclick="selectMonth(11)" class="month">11</span>
+          <span onclick="selectMonth(12)" class="month">12</span>
         </div>
         <table class="calendar-table">
           <thead>

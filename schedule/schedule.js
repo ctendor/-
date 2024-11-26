@@ -34,40 +34,55 @@ function renderCalendar(year, month) {
   }
 }
 
+function highlightSelectedMonth() {
+  const monthElements = document.querySelectorAll(".month-pagination .month");
+  monthElements.forEach((element, index) => {
+    if (index + 1 === currentMonth) {
+      element.style.color = "red";
+      element.style.fontWeight = "bold";
+      element.style.fontSize = "1.2em";
+    } else {
+      element.style.color = "black";
+      element.style.fontWeight = "normal";
+      element.style.fontSize = "1em";
+    }
+  });
+}
+
 let currentYear = 2024;
 let currentMonth = 12;
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCalendar(currentYear, currentMonth);
+  highlightSelectedMonth();
 });
 
-function prevMonth() {
-  if (currentMonth === 1) {
-    currentMonth = 12;
-    currentYear -= 1;
-  } else {
-    currentMonth -= 1;
-  }
+function prevYear() {
+  currentYear -= 1;
   updateCalendar();
 }
 
-function nextMonth() {
-  if (currentMonth === 12) {
-    currentMonth = 1;
-    currentYear += 1;
-  } else {
-    currentMonth += 1;
-  }
+function nextYear() {
+  currentYear += 1;
+  updateCalendar();
+}
+
+function selectMonth(month) {
+  currentMonth = month;
   updateCalendar();
 }
 
 function updateCalendar() {
   document.getElementById("calendar-year").textContent = currentYear;
-  document.getElementById("calendar-month").textContent = currentMonth;
   renderCalendar(currentYear, currentMonth);
+  highlightSelectedMonth();
 }
 
 function logout() {
   alert("로그아웃 되었습니다.");
   window.location.href = "../login/index.html";
+}
+
+function mergeTeamSchedules() {
+  alert("팀원 일정 합치기 기능이 준비 중입니다.");
 }

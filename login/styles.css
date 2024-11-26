@@ -12,14 +12,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 form {
   background-color: var(--color-blue);
   border-radius: var(--size-border);
   padding: 30px 20px;
-  width: 300px;
+  width: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,6 +36,7 @@ form div {
   font-size: 14px;
   color: white;
   margin-bottom: 5px;
+  margin-top: 10px;
   text-align: left;
 }
 
@@ -54,7 +55,7 @@ button {
   border: none;
   border-radius: var(--size-border);
   cursor: pointer;
-  width: 45%;
+  width: calc(100% - 10px);
 }
 
 button:hover {
