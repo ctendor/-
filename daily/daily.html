@@ -1,11 +1,50 @@
-<div class="form-container">
-  <input type="date" id="schedule-date" />
-  <input type="time" id="start-time" />
-  <input type="time" id="end-time" />
-  <input
-    type="text"
-    id="schedule-details"
-    placeholder="일정 상세 ex) 미팅 or 점심식사"
-  />
-  <button onclick="addSchedule()">일정 추가</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Schedule</title>
+    <link rel="stylesheet" href="daily.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>접속자 : 이태경 | 직급 : 관리자</div>
+        <button class="logout-btn" onclick="logout()">로그아웃</button>
+      </div>
+
+      <h2 id="date-title">2024년 11월 26일 일정</h2>
+
+      <div class="main">
+        <div class="schedule-list">
+          <div id="schedule-items"></div>
+        </div>
+
+        <div class="schedule-input">
+          <h3>일정 추가</h3>
+          <div>
+            <label for="start-time">일정 시작시간</label>
+            <input type="time" id="start-time" required />
+          </div>
+          <div>
+            <label for="end-time">일정 종료시간</label>
+            <input type="time" id="end-time" required />
+          </div>
+          <div>
+            <label for="details">일정 상세</label>
+            <input
+              type="text"
+              id="details"
+              maxlength="200"
+              placeholder="ex) 미팅, 점심식사"
+              required
+            />
+          </div>
+          <button onclick="addSchedule()">일정 추가</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="daily.js"></script>
+  </body>
+</html>
