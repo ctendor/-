@@ -14,62 +14,59 @@ function calculateDayOfWeek(year, month, day) {
 
 function renderCalendar(year, month) {
   const calendarBody = document.getElementById("calendar-body");
+  if (!calendarBody) {
+    console.error("Element with id 'calendar-body' not found.");
+    return;
+  }
+
   calendarBody.innerHTML = "";
   const totalDays = new Date(year, month, 0).getDate();
   const firstDayOfWeek = calculateDayOfWeek(year, month, 1);
+
   let row = document.createElement("tr");
+
   for (let i = 0; i < firstDayOfWeek; i++) {
     const emptyCell = document.createElement("td");
     row.appendChild(emptyCell);
   }
+
   for (let day = 1; day <= totalDays; day++) {
     const cell = document.createElement("td");
     cell.textContent = day;
-    cell.onclick = () => alert(`${year}-${month}-${day}`);
+    cell.onclick = () => {
+      location.href = `../daily/dailyPage.jsp?date=${year}-${String(
+        month
+      ).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    };
     row.appendChild(cell);
+
     if ((day + firstDayOfWeek) % 7 === 0) {
       calendarBody.appendChild(row);
       row = document.createElement("tr");
     }
   }
+
   if (row.children.length > 0) {
     calendarBody.appendChild(row);
   }
 }
 
 function highlightSelectedMonth() {
-  const monthElements = document.querySelectorAll(".month-pagination .month");
+  const monthElements = document.querySelectorAll(".month-pagination span");
   monthElements.forEach((element, index) => {
     if (index + 1 === currentMonth) {
-      element.style.color = "red";
-      element.style.fontWeight = "bold";
-      element.style.fontSize = "1.2em";
+      element.classList.add("selected");
     } else {
-      element.style.color = "black";
-      element.style.fontWeight = "normal";
-      element.style.fontSize = "1em";
+      element.classList.remove("selected");
     }
   });
 }
+
 function setCurrentDate() {
   const today = new Date();
   currentYear = today.getFullYear();
   currentMonth = today.getMonth() + 1;
 }
-
-function initializeMonthPagination() {
-  const monthElements = document.querySelectorAll(".month-pagination .month");
-  monthElements.forEach((element, index) => {
-    element.addEventListener("click", () => selectMonth(index + 1));
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setCurrentDate();
-  renderCalendar(currentYear, currentMonth);
-  highlightSelectedMonth();
-  initializeMonthPagination();
-});
 
 function prevYear() {
   currentYear -= 1;
@@ -94,9 +91,16 @@ function updateCalendar() {
 
 function logout() {
   alert("로그아웃 되었습니다.");
-  window.location.href = "../login/index.html";
+  window.location.href = "../login/loginPage.jsp";
 }
 
 function mergeTeamSchedules() {
   alert("팀원 일정 합치기 기능이 준비 중입니다.");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  setCurrentDate();
+  document.getElementById("calendar-year").textContent = currentYear;
+  renderCalendar(currentYear, currentMonth);
+  highlightSelectedMonth();
+});

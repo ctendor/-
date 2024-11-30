@@ -1,57 +1,60 @@
-import { validateId, validatePassword } from "../common/regex.js";
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  const idInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const idMessage = document.getElementById("username-message");
+  const passwordMessage = document.getElementById("password-message");
 
-const idInput = document.getElementById("login-id");
-const passwordInput = document.getElementById("login-password");
-
-function createErrorMessage(inputElement, validationResult) {
-  let errorMessage = inputElement.nextElementSibling;
-  if (errorMessage && errorMessage.classList.contains("error-message")) {
-    errorMessage.remove();
-  }
-
-  if (!validationResult.isValid) {
-    const span = document.createElement("span");
-    span.textContent = validationResult.message;
-    span.classList.add("error-message");
-    inputElement.parentNode.insertBefore(span, inputElement.nextSibling);
-  }
-}
-
-idInput.addEventListener("change", function () {
-  const validation = validateId(idInput.value);
-  createErrorMessage(idInput, validation);
-});
-
-passwordInput.addEventListener("change", function () {
-  const validation = validatePassword(passwordInput.value);
-  createErrorMessage(passwordInput, validation);
-});
-
-document
-  .getElementById("login-form")
-  .addEventListener("submit", function (event) {
-    const idValidation = validateId(idInput.value);
-    const passwordValidation = validatePassword(passwordInput.value);
-
-    if (!idValidation.isValid || !passwordValidation.isValid) {
-      event.preventDefault();
-      alert("아이디 또는 비밀번호가 올바르지 않습니다.");
-    } else {
-      alert("로그인 성공!");
+  function updateMessage(element, message) {
+    if (element) {
+      element.textContent = message;
     }
-  });
+  }
 
-document
-  .getElementById("find-id-button")
-  .addEventListener("click", function () {
-    window.location.href = "../find-id/find-id.html";
-  });
-document
-  .getElementById("find-password-button")
-  .addEventListener("click", function () {
-    window.location.href = "../find-password/find-password.html";
-  });
+  if (idInput) {
+    idInput.addEventListener("input", () => {
+      const validation = {
+        isValid: idInput.value.trim().length >= 8,
+        message: "아이디는 최소 8자 이상이어야 합니다.",
+      };
+      updateMessage(idMessage, validation.isValid ? "" : validation.message);
+    });
+  } else {
+    console.error("username 요소를 찾을 수 없습니다.");
+  }
 
-document.getElementById("signup-button").addEventListener("click", function () {
-  window.location.href = "../signup/signup.html";
+  if (passwordInput) {
+    passwordInput.addEventListener("input", () => {
+      const validation = {
+        isValid: passwordInput.value.trim().length >= 8,
+        message: "비밀번호는 최소 8자 이상이어야 합니다.",
+      };
+      updateMessage(
+        passwordMessage,
+        validation.isValid ? "" : validation.message
+      );
+    });
+  } else {
+    console.error("password 요소를 찾을 수 없습니다.");
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", (event) => {
+      const idValidation = {
+        isValid: idInput && idInput.value.trim().length >= 8,
+        message: "아이디는 최소 8자 이상이어야 합니다.",
+      };
+      const passwordValidation = {
+        isValid: passwordInput && passwordInput.value.trim().length >= 8,
+        message: "비밀번호는 최소 8자 이상이어야 합니다.",
+      };
+
+      if (!idValidation.isValid || !passwordValidation.isValid) {
+        event.preventDefault();
+        alert("아이디와 비밀번호를 확인해주세요.");
+      }
+    });
+  } else {
+    console.error("login-form 요소를 찾을 수 없습니다.");
+  }
 });
