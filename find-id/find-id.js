@@ -33,6 +33,5 @@ document
 
     if (!nameValidation.isValid || !emailValidation.isValid) {
       event.preventDefault();
-      alert("입력한 정보를 확인해주세요.");
     }
   });

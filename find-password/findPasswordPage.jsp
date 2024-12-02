@@ -13,15 +13,15 @@
     <form action="findPasswordAction.jsp" method="post">
         <div class="input-container">
             <label for="id">아이디</label>
-            <input type="text" id="id" name="id" placeholder="아이디 입력" required>
+            <input type="text" id="id" name="id" placeholder="아이디 입력">
         </div>
         <div class="input-container">
             <label for="name">이름</label>
-            <input type="text" id="name" name="name" placeholder="이름 입력" required>
+            <input type="text" id="name" name="name" placeholder="이름 입력">
         </div>
         <div class="input-container">
             <label for="email">이메일</label>
-            <input type="email" id="email" name="email" placeholder="이메일 입력" required>
+            <input type="email" id="email" name="email" placeholder="이메일 입력">
         </div>
         <button type="submit">비밀번호 찾기</button>
     </form>

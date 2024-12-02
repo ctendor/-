@@ -4,7 +4,6 @@
     String name = request.getParameter("find-id-name");
     String email = request.getParameter("find-id-email");
 
-    // 정규식 검증
     String emailRegex = "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[a-zA-Z]{2,7})+$";
     if (name == null || name.trim().isEmpty()) {
         out.println("<script>alert('이름을 입력해주세요.'); history.back();</script>");

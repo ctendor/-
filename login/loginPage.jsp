@@ -14,13 +14,13 @@
             <div class="input-container">
                 <div>
                     <label for="username">아이디</label>
-                    <input type="text" id="username" name="username" placeholder="아이디 입력" autocomplete="username" required />
+                    <input type="text" id="username" name="username" placeholder="아이디 입력">
                     <span id="username-message"></span>
                 </div>
 
                 <div>
                     <label for="password">비밀번호</label>
-                    <input type="password" id="password" name="password" placeholder="비밀번호 입력" autocomplete="current-password" required />
+                    <input type="password" id="password" name="password" placeholder="비밀번호 입력">
                     <span id="password-message"></span>
                  </div>
             </div>

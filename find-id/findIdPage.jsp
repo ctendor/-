@@ -14,11 +14,11 @@
         <form id="find-id-form" method="post" action="findIdAction.jsp">
             <div class="input-container">
                 <label for="find-id-name">이름</label>
-                <input type="text" id="find-id-name" name="find-id-name" placeholder="이름 입력" required>
+                <input type="text" id="find-id-name" name="find-id-name" placeholder="이름 입력">
                 <span id="find-id-name-message"></span>
 
                 <label for="find-id-email">이메일</label>
-                <input type="text" id="find-id-email" name="find-id-email" placeholder="이메일 입력" required>
+                <input type="text" id="find-id-email" name="find-id-email" placeholder="이메일 입력">
                 <span id="find-id-email-message"></span>
             </div>
             <div class="button-container">
