@@ -7,7 +7,8 @@
     String id = request.getParameter("id");
     String name = request.getParameter("name");
     String email = request.getParameter("email");
-
+    Connection conn;
+    
     try {
        Class.forName("org.mariadb.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/daily", "taek", "1234");

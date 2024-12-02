@@ -30,12 +30,11 @@
         rs = pstmt.executeQuery();
 
         if (rs.next()) {
-            userId = rs.getString("user_id");
+            userId = rs.getString("id");
         }
     } catch (Exception e) {
         e.printStackTrace();
         out.println("<p>Error: " + e.getMessage()+"</p>");
-        return;
     } finally {
         if (rs != null) rs.close();
         if (pstmt != null) pstmt.close();
@@ -43,7 +42,7 @@
     }
 
     if (userId != null) {
-        out.println("<script>alert('아이디: " + userId + "'); location.href='loginPage.jsp';</script>");
+        out.println("<script>alert('아이디: " + userId + "'); location.href='../login/loginPage.jsp';</script>");
     } else {
         out.println("<script>alert('등록된 사용자를 찾을 수 없습니다.'); history.back();</script>");
     }
