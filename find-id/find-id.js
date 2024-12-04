@@ -33,5 +33,6 @@ document
 
     if (!nameValidation.isValid || !emailValidation.isValid) {
       event.preventDefault();
+      alert("아이디 찾기에 실패하였습니다.");
     }
   });

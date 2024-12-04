@@ -9,8 +9,8 @@
     }
 
     int userId = (int) session.getAttribute("user_id");
-    String position = (String) session.getAttribute("position");
-
+    int position = (int) session.getAttribute("position");
+    if(userId == 1) 
     if (!"팀장".equals(position)) {
         out.println("<script>alert('팀장만 사용할 수 있는 기능입니다.'); history.back();</script>");
         return;

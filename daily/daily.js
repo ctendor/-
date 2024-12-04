@@ -52,7 +52,6 @@ function deleteSchedule(index) {
     renderSchedules();
   }
 }
-
 function editSchedule(index) {
   const schedule = schedules[index];
   const newStartTime = prompt("새로운 시작시간 (HH:MM)", schedule.startTime);

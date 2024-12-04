@@ -15,7 +15,6 @@ function calculateDayOfWeek(year, month, day) {
 function renderCalendar(year, month) {
   const calendarBody = document.getElementById("calendar-body");
   if (!calendarBody) {
-    console.error("Element with id 'calendar-body' not found.");
     return;
   }
 

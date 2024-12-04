@@ -2,7 +2,7 @@
 <%@ page import="java.sql.*" %>
 <%
     if (session != null) {
-        session.invalidate(); // 세션 무효화
+        Session.Abandon(); 
     }
 
     try {

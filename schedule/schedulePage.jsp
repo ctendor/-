@@ -23,7 +23,6 @@
             </div>
 
             <div class="month-pagination">
-            <div class="month-pagination">
                 <span onclick="selectMonth(1)">1월</span>
                 <span onclick="selectMonth(2)">2월</span>
                 <span onclick="selectMonth(3)">3월</span>
